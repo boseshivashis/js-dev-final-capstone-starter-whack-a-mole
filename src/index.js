@@ -177,8 +177,11 @@ function toggleVisibility(hole){
 function updateScore() {
   // TODO: Write your code here
   points++;
-
+  console.log("Points value: "+points);
+  console.log("Existing Score Value: "+  score.textContent);
   score.textContent = points;
+  console.log("Updated Score Value: "+  score.textContent);
+
   return points;
 }
 
@@ -232,15 +235,14 @@ function startTimer() {
 function whack(event) {
   // TODO: Write your code here.
 
-  if (event && event.target && event.target.classList.contains("show") ) {
-    updateScore();
+  // if (event && event.target && event.target.classList.contains("show") ) {
+  //   updateScore();
 
-    toggleVisibility(lastHole);
+  //   toggleVisibility(lastHole);
 
-  }
+  // }
 
- 
-    
+  updateScore();
   
   return points;
 }
@@ -295,7 +297,7 @@ function startGame(){
 }
 
 startButton.addEventListener("click", startGame);
-setEventListeners();
+//setEventListeners();
 
 
 
