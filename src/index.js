@@ -176,7 +176,7 @@ function toggleVisibility(hole){
 */
 function updateScore() {
   // TODO: Write your code here
-  points = points + 1;
+  points++;
 
   score.textContent = points;
   return points;
@@ -189,7 +189,8 @@ function updateScore() {
 * the points.
 *
 */
-function clearScore() {
+function clearScore
+() {
   // TODO: Write your code here
   points = 0;
   score.textContent = points;
@@ -216,7 +217,7 @@ function updateTimer() {
 */
 function startTimer() {
   // TODO: Write your code here
-  // timer = setInterval(updateTimer, 1000);
+  timer = setInterval(updateTimer, 1000);
   return timer;
 }
 
@@ -230,7 +231,16 @@ function startTimer() {
 */
 function whack(event) {
   // TODO: Write your code here.
-  updateScore()
+
+  if (event && event.target && event.target.classList.contains("show") ) {
+    updateScore();
+
+    toggleVisibility(lastHole);
+
+  }
+
+ 
+    
   
   return points;
 }
