@@ -176,12 +176,8 @@ function toggleVisibility(hole){
 */
 function updateScore() {
   // TODO: Write your code here
-  points++;
-  console.log("Points value: "+points);
-  console.log("Existing Score Value: "+  score.textContent);
+  points = points + 1;
   score.textContent = points;
-  console.log("Updated Score Value: "+  score.textContent);
-
   return points;
 }
 
@@ -208,7 +204,10 @@ function clearScore
 function updateTimer() {
   // TODO: Write your code here.
   // hint: this code is provided to you in the instructions.
-  
+  if (time > 0){
+    time -= 1;
+    timerDisplay.textContent = time;
+  }
   return time;
 }
 
@@ -234,16 +233,10 @@ function startTimer() {
 */
 function whack(event) {
   // TODO: Write your code here.
-
-  // if (event && event.target && event.target.classList.contains("show") ) {
-  //   updateScore();
-
-  //   toggleVisibility(lastHole);
-
-  // }
-
+  if(event && event.preventDefault) {
+    event.preventDefault();
+  }
   updateScore();
-  
   return points;
 }
 
@@ -293,12 +286,11 @@ function startGame(){
   setDuration(10);
   showUp();
   setEventListeners();
+  startTimer();
   return "game started";
 }
 
 startButton.addEventListener("click", startGame);
-//setEventListeners();
-
 
 
 // Please do not modify the code below.
