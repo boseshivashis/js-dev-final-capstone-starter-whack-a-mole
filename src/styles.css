@@ -52,7 +52,17 @@ h2 {
   justify-content: center;
   flex-shrink: inherit;
   align-items: center;
+  max-height: 30%;
 }
+
+.displayTable {
+  margin-top: 100px;
+  padding-top: 100px;
+  display:flex;
+  flex:1;
+  flex-direction: row;
+  justify-content: space-evenly;
+} 
 
 .hole {
   flex: 1 0 33.33%;
