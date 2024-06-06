@@ -69,7 +69,6 @@ function chooseHole(holes) {
   // TODO: Write your code here.
   const indexHole = randomInteger(0,8);
   const hole = holes[indexHole];
-  let lastHole = 0;
 
   if (hole === lastHole) {
     chooseHole(holes);
